@@ -1,7 +1,8 @@
 CC = clang++
 
 SRCS = main.cpp \
-		contact.cpp
+		contact.cpp \
+		phonebook.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
