@@ -1,30 +1,48 @@
-# include "contact.hpp"
-# include <iostream>
+# include "phonebook.hpp"
 
 int main()
 {
+    int         how_many_contact;
     std::string str;
-    Contact cont{};
+    Phonebook   phonebook;
 
-    std::cout << "What do you want to do? ADD a contact ? SEARCH someone? EXIT ?" << std::endl;
+    how_many_contact = 0;
+    std::cout << "\nWelcome to your phonebook!" << std::endl;
+    std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
     while (std::cin >> str)
     {
         if (str == "ADD")
         {
-            std::cout << "Add contact" << std::endl;
-//            ft_add_contact(&contact);
+            how_many_contact++;
+            if (how_many_contact <= 8)
+            {
+                std::cout << "You have chosen to add a contact." << std::endl;
+                phonebook.AddContact(how_many_contact);
+            }
+            else
+            {
+                std::cout << "Something wrong happened." << std::endl;
+                std::cout << "You have already added 8 contacts. There's no more memory left in your phone." << std::endl;
+                std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
+            }
         }
         else if (str == "SEARCH")
         {
-            std::cout << "Search contact" << std::endl;
+//          if (contact == existe)
+            std::cout << "Here's the list of your contacts." << std::endl;
+            std::cout << "Wich contact do you want to look for?" << std::endl;
+//          else
         }
         else if (str == "EXIT")
         {
-            std::cout << "FINITO FRERO" << std::endl;
+            std::cout << "You left the phonebook.\nGoodbye!" << std::endl;
             return (0);
         }
         else
-            std::cout << "What do you want to do? ADD a contact ? SEARCH someone? EXIT ?" << std::endl;
+        {
+            std::cout << "You wrote something wrong." << std::endl;
+            std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
+        }
     }
     return (0);
 }

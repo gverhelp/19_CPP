@@ -1,14 +1,121 @@
-#include "contact.hpp"
+#include "phonebook.hpp"
 
-Contact::Contact()
+Contact::Contact() {}
+
+void setFirstName()
+{
+
+}
+
+void setLastName()
+{
+
+}
+
+void setNickname()
+{
+
+}
+
+void setLogin()
+{
+
+}
+
+void setPostalAdress()
+{
+
+}
+
+void setEmailAdress()
+{
+
+}
+
+void setFavoriteMeal()
+{
+
+}
+
+void setUnderwearColor()
+{
+
+}
+
+void setDarkestSecret()
+{
+
+}
+
+void setPhoneNumber()
+{
+
+}
+
+void setBirthdayDate()
+{
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+std::string getFirstName()
 {
     
 }
 
-void ft_add_contact(Contact *contact)
+std::string getLastName()
 {
-    std::cout << "First name ?" << std::endl;
-    std::cin >> contact->first_name;
+
+}
+
+std::string getNickname()
+{
+
+}
+
+std::string getLogin()
+{
+
+}
+
+std::string getPostalAdress()
+{
+
+}
+
+std::string getEmailAdress()
+{
+
+}
+
+std::string getFavoriteMeal()
+{
+
+}
+
+std::string getUnderwearColor()
+{
+
+}
+
+std::string getDarkestSecret()
+{
+
+}
+
+std::string getPhoneNumber()
+{
+
+}
+
+std::string getBirthdayDate()
+{
+
+}
+
+/*    std::cout << "First name ?" << std::endl;
+    std::cin >> contact[id_contact];
     std::cout << "Last name ?" << std::endl;
     std::cin >> contact->last_name;
     std::cout << "Nickame ?" << std::endl;
@@ -28,5 +135,4 @@ void ft_add_contact(Contact *contact)
     std::cout << "Underwear color ?" << std::endl;
     std::cin >> contact->underwear_color;
     std::cout << "Darkest secret ?" << std::endl;
-    std::cin >> contact->darkest_secret;
-}
+    std::cin >> contact->darkest_secret; */
