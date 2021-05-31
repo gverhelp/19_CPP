@@ -2,137 +2,123 @@
 
 Contact::Contact() {}
 
-void setFirstName()
+void Contact::setFirstName()
 {
-
+    std::cout << "First name : ";
+    std::cin >> first_name;
 }
 
-void setLastName()
+void Contact::setLastName()
 {
-
+    std::cout << "Last name : ";
+    std::cin >> last_name;
 }
 
-void setNickname()
+void Contact::setNickname()
 {
-
+    std::cout << "Nickame : ";
+    std::cin >> nickmane;
 }
 
-void setLogin()
+void Contact::setLogin()
 {
-
+    std::cout << "Login : ";
+    std::cin >> login;
 }
 
-void setPostalAdress()
+void Contact::setPostalAdress()
 {
-
+    std::cout << "Postal address : ";
+    std::cin >> postal_adress;
 }
 
-void setEmailAdress()
+void Contact::setEmailAdress()
 {
-
+    std::cout << "Email adress : ";
+    std::cin >> email_adress;
 }
 
-void setFavoriteMeal()
+void Contact::setFavoriteMeal()
 {
-
+    std::cout << "Favorite Meal : ";
+    std::cin >> favorite_meal;
 }
 
-void setUnderwearColor()
+void Contact::setUnderwearColor()
 {
-
+    std::cout << "Underwear color : ";
+    std::cin >> underwear_color;
 }
 
-void setDarkestSecret()
+void Contact::setDarkestSecret()
 {
-
+    std::cout << "Darkest secret : ";
+    std::cin >> darkest_secret;
 }
 
-void setPhoneNumber()
+void Contact::setPhoneNumber()
 {
-
+    std::cout << "Phone number : ";
+    std::cin >> phone_number;
 }
 
-void setBirthdayDate()
+void Contact::setBirthdayDate()
 {
-
+    std::cout << "Birthday date : ";
+    std::cin >> birthday_date;
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////
-
-std::string getFirstName()
+std::string Contact::getFirstName() const
 {
-    
+    return (first_name);
 }
 
-std::string getLastName()
+std::string Contact::getLastName() const
 {
-
+    return (last_name);
 }
 
-std::string getNickname()
+std::string Contact::getNickname() const
 {
-
+    return (nickmane);
 }
 
-std::string getLogin()
+std::string Contact::getLogin() const
 {
-
+    return (login);
 }
 
-std::string getPostalAdress()
+std::string Contact::getPostalAdress() const
 {
-
+    return (postal_adress);
 }
 
-std::string getEmailAdress()
+std::string Contact::getEmailAdress() const
 {
-
+    return (email_adress);
 }
 
-std::string getFavoriteMeal()
+std::string Contact::getFavoriteMeal() const
 {
-
+    return (favorite_meal);
 }
 
-std::string getUnderwearColor()
+std::string Contact::getUnderwearColor() const
 {
-
+    return (underwear_color);
 }
 
-std::string getDarkestSecret()
+std::string Contact::getDarkestSecret() const
 {
-
+    return (darkest_secret);
 }
 
-std::string getPhoneNumber()
+std::string Contact::getPhoneNumber() const
 {
-
+    return (phone_number);
 }
 
-std::string getBirthdayDate()
+std::string Contact::getBirthdayDate() const
 {
-
+    return (birthday_date);
 }
-
-/*    std::cout << "First name ?" << std::endl;
-    std::cin >> contact[id_contact];
-    std::cout << "Last name ?" << std::endl;
-    std::cin >> contact->last_name;
-    std::cout << "Nickame ?" << std::endl;
-    std::cin >> contact->nickmane;
-    std::cout << "Login ?" << std::endl;
-    std::cin >> contact->login;
-    std::cout << "Postal address ?" << std::endl;
-    std::cin >> contact->postal_adress;
-    std::cout << "Email adress ?" << std::endl;
-    std::cin >> contact->email_adress;
-    std::cout << "Phone number ?" << std::endl;
-    std::cin >> contact->phone_number;
-    std::cout << "Birthday date ?" << std::endl;
-    std::cin >> contact->birthday_date;
-    std::cout << "Favorite meal ?" << std::endl;
-    std::cin >> contact->favorite_meal;
-    std::cout << "Underwear color ?" << std::endl;
-    std::cin >> contact->underwear_color;
-    std::cout << "Darkest secret ?" << std::endl;
-    std::cin >> contact->darkest_secret; */

@@ -13,25 +13,28 @@ int main()
     {
         if (str == "ADD")
         {
-            how_many_contact++;
-            if (how_many_contact <= 8)
+            if (how_many_contact < 8)
             {
+                how_many_contact++;
                 std::cout << "You have chosen to add a contact." << std::endl;
                 phonebook.AddContact(how_many_contact);
+                std::cout << "\nContact well registered!" << std::endl;
             }
             else
             {
                 std::cout << "Something wrong happened." << std::endl;
                 std::cout << "You have already added 8 contacts. There's no more memory left in your phone." << std::endl;
-                std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
             }
+            std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
+        }
+        else if (str == "affiche")
+        {
+            phonebook.SearchContact(1);
         }
         else if (str == "SEARCH")
         {
-//          if (contact == existe)
             std::cout << "Here's the list of your contacts." << std::endl;
-            std::cout << "Wich contact do you want to look for?" << std::endl;
-//          else
+            std::cout << "Wich contact do you want to look for? Type his index." << std::endl;
         }
         else if (str == "EXIT")
         {
