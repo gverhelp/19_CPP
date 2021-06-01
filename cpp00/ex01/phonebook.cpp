@@ -4,6 +4,7 @@ Phonebook::Phonebook() {}
 
 void Phonebook::AddContact(int id_contact)
 {
+    std::cout << "\nYou have chosen to add a contact.\n" << std::endl;
     contact[id_contact].setFirstName();
     contact[id_contact].setLastName();
     contact[id_contact].setNickname();
@@ -15,11 +16,21 @@ void Phonebook::AddContact(int id_contact)
     contact[id_contact].setFavoriteMeal();
     contact[id_contact].setUnderwearColor();
     contact[id_contact].setDarkestSecret();
+    std::cout << "\nContact well registered!\n" << std::endl;
 }
 
-void Phonebook::ShowContact()
+void Phonebook::ShowContact(int id_contact)
 {
+    int a;
 
+    a = 0;
+    (void)a;
+    (void)id_contact;
+    while (a < id_contact)
+    {
+        std::cout << a + 1 << "|" << contact[a].setupFirstName() << "|" << contact[a].setupLastName() << "|" << contact[a].setupNickname() << std::endl;
+        a++;
+    }  
 }
 
 void Phonebook::SearchContact(int id_contact)

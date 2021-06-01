@@ -19,6 +19,10 @@ class Contact
         void setPhoneNumber();
         void setBirthdayDate();
 
+        std::string setupFirstName();
+        std::string setupLastName();
+        std::string setupNickname();
+
         std::string getFirstName() const;
         std::string getLastName() const;
         std::string getNickname() const;

@@ -122,3 +122,84 @@ std::string Contact::getBirthdayDate() const
 {
     return (birthday_date);
 }
+
+std::string Contact::setupFirstName()
+{
+    std::string new_FirstName;
+    std::string space;
+    int         count_space;
+
+    count_space = 0;
+    new_FirstName = first_name;
+    if (new_FirstName.size() == 10)
+        return (new_FirstName);
+    else if (new_FirstName.size() < 10)
+    {
+        while (count_space + new_FirstName.size() < 10)
+        {
+            space += " ";
+            count_space++;
+        }
+        std::cout << space;
+    }
+    else if (new_FirstName.size() > 10)
+    {
+        new_FirstName.erase(9, new_FirstName.size() - 9);
+        new_FirstName.append(".");
+    }
+    return (new_FirstName);
+}
+
+std::string Contact::setupLastName()
+{
+    std::string new_LastName;
+    std::string space;
+    int         count_space;
+
+    count_space = 0;
+    new_LastName = last_name;
+    if (new_LastName.size() == 10)
+        return (new_LastName);
+    else if (new_LastName.size() < 10)
+    {
+        while (count_space + new_LastName.size() < 10)
+        {
+            space += " ";
+            count_space++;
+        }
+        std::cout << space;
+    }
+    else if (new_LastName.size() > 10)
+    {
+        new_LastName.erase(9, new_LastName.size() - 9);
+        new_LastName.append(".");
+    }
+    return (new_LastName);
+}
+
+std::string Contact::setupNickname()
+{
+    std::string new_Nickname;
+    std::string space;
+    int         count_space;
+
+    count_space = 0;
+    new_Nickname = nickmane;
+    if (new_Nickname.size() == 10)
+        return (new_Nickname);
+    else if (new_Nickname.size() < 10)
+    {
+        while (count_space + new_Nickname.size() < 10)
+        {
+            space += " ";
+            count_space++;
+        }
+        std::cout << space;
+    }
+    else if (new_Nickname.size() > 10)
+    {
+        new_Nickname.erase(9, new_Nickname.size() - 9);
+        new_Nickname.append(".");
+    }
+    return (new_Nickname);
+}
