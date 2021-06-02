@@ -7,12 +7,16 @@ class Phonebook
 {
     public:
         Phonebook();
-        void AddContact(int id_contact);
-        void ShowContact(int id_contact);
-        void SearchContact(int id_contact);
+
+        void AddContact();
+        void ShowContact();
+        void SearchContact();
+
+        int getNbrContact() const;
 
     private:
-        Contact contact[7];
+        Contact contact[8];
+        int     nbr_contact;
 };
 
 #endif

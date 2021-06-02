@@ -2,11 +2,9 @@
 
 int main()
 {
-    int         how_many_contact;
     std::string str;
     Phonebook   phonebook;
 
-    how_many_contact = 0;
     std::cout << "\nWelcome to your phonebook!" << std::endl;
     while (1)
     {
@@ -14,22 +12,16 @@ int main()
         std::cout << "=> ";
         getline(std::cin, str);
         if (str == "ADD")
-        {
-            if (how_many_contact < 8)
-            {
-                phonebook.AddContact(how_many_contact);
-                how_many_contact++;
-            }
-            else
-            {
-                std::cout << "\nSomething wrong happened." << std::endl;
-                std::cout << "You have already added 8 contacts. There's no more memory left in your phone." << std::endl;
-            }
-        }
+            phonebook.AddContact();
         else if (str == "SEARCH")
         {
-            phonebook.ShowContact(how_many_contact);
-            phonebook.SearchContact(how_many_contact);
+            if (phonebook.getNbrContact() == 0)
+                std::cout << "\nYour phonebook is empty." << std::endl;
+            else
+            {
+                phonebook.ShowContact();
+                phonebook.SearchContact();
+            }
         }
         else if (str == "EXIT")
         {

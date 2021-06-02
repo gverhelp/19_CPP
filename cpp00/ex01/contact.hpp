@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 class Contact
 {
     public:
         Contact();
+
         void setFirstName();
         void setLastName();
         void setNickname();
@@ -38,7 +40,7 @@ class Contact
 
     private:
         std::string first_name;
-        std::string last_name;
+        std::string _last_name;
         std::string nickmane;
         std::string login;
         std::string postal_adress;

@@ -16,11 +16,11 @@ void Contact::setFirstName()
 void Contact::setLastName()
 {
     std::cout << "Last name : ";
-    getline(std::cin, last_name);
-    while (last_name == "")
+    getline(std::cin, _last_name);
+    while (_last_name == "")
     {
         std::cout << "Last name : ";
-        getline(std::cin, last_name);
+        getline(std::cin, _last_name);
     }
 }
 
@@ -130,7 +130,7 @@ std::string Contact::getFirstName() const
 
 std::string Contact::getLastName() const
 {
-    return (last_name);
+    return (_last_name);
 }
 
 std::string Contact::getNickname() const
@@ -212,7 +212,7 @@ std::string Contact::setupLastName()
     int         count_space;
 
     count_space = 0;
-    new_LastName = last_name;
+    new_LastName = _last_name;
     if (new_LastName.size() == 10)
         return (new_LastName);
     else if (new_LastName.size() < 10)
