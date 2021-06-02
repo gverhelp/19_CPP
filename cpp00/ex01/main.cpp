@@ -16,7 +16,7 @@ int main()
         else if (str == "SEARCH")
         {
             if (phonebook.getNbrContact() == 0)
-                std::cout << "\nYour phonebook is empty." << std::endl;
+                std::cout << "\nYour phonebook is empty. Try to ADD a contact." << std::endl;
             else
             {
                 phonebook.ShowContact();

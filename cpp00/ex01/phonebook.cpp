@@ -22,7 +22,7 @@ void Phonebook::AddContact()
         contact[nbr_contact].setUnderwearColor();
         contact[nbr_contact].setDarkestSecret();
         nbr_contact++;
-        std::cout << "\nContact well registered!\n" << std::endl;
+        std::cout << "\nContact well registered!" << std::endl;
     }
     else
     {
