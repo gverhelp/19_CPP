@@ -24,16 +24,10 @@ int main()
                 std::cout << "You have already added 8 contacts. There's no more memory left in your phone." << std::endl;
             }
         }
-        else if (str == "affiche")
-        {
-            phonebook.SearchContact(0);
-        }
         else if (str == "SEARCH")
         {
-            std::cout << "\nHere's the list of your contacts." << std::endl;
             phonebook.ShowContact(how_many_contact);
-            std::cout << "\nWich contact do you want to look for? Type his index." << std::endl;
-//            phonebook.SearchContact();
+            phonebook.SearchContact(how_many_contact);
         }
         else if (str == "EXIT")
         {
@@ -44,7 +38,7 @@ int main()
         {
             std::cout << "\nYou typed something wrong." << std::endl;
         }
-        std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
+        std::cout << "\nWhat do you want to do? ADD, SEARCH or EXIT?" << std::endl;
     }
     return (0);
 }
