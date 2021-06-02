@@ -36,10 +36,11 @@ void Phonebook::ShowContact(int id_contact)
 void Phonebook::SearchContact(int id_contact)
 {
     int index;
-
     (void)id_contact;
+
     index = 0;
     std::cout << "\nWich contact do you want to look for? Type his index." << std::endl;
+    std::cout << "=> ";
     std::cin >> index;
 //////////////////////////////// getline + gérer le fait de devoir mettre que des int
     std::cout << "\nHere is all the informations about the contact you asked for : \n" << std::endl;

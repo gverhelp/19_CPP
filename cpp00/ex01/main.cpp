@@ -8,9 +8,11 @@ int main()
 
     how_many_contact = 0;
     std::cout << "\nWelcome to your phonebook!" << std::endl;
-    std::cout << "What do you want to do? ADD, SEARCH or EXIT?" << std::endl;
-    while (std::cin >> str)
+    while (1)
     {
+        std::cout << "\nWhat do you want to do? ADD, SEARCH or EXIT?" << std::endl;
+        std::cout << "=> ";
+        getline(std::cin, str);
         if (str == "ADD")
         {
             if (how_many_contact < 8)
@@ -35,10 +37,7 @@ int main()
             return (0);
         }
         else
-        {
             std::cout << "\nYou typed something wrong." << std::endl;
-        }
-        std::cout << "\nWhat do you want to do? ADD, SEARCH or EXIT?" << std::endl;
     }
     return (0);
 }
