@@ -10,9 +10,13 @@ int main()
     {
         std::cout << "\nWhat do you want to do? ADD, SEARCH or EXIT?" << std::endl;
         std::cout << "=> ";
-        getline(std::cin, str);
+        if (!getline(std::cin, str))
+            return (-1);
         if (str == "ADD")
-            phonebook.AddContact();
+        {
+            if (phonebook.AddContact() == -1)
+                return (-1);
+        }
         else if (str == "SEARCH")
         {
             if (phonebook.getNbrContact() == 0)
@@ -20,7 +24,8 @@ int main()
             else
             {
                 phonebook.ShowContact();
-                phonebook.SearchContact();
+                if (phonebook.SearchContact() == -1)
+                    return (-1);
             }
         }
         else if (str == "EXIT")

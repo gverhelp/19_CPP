@@ -10,17 +10,17 @@ class Contact
     public:
         Contact();
 
-        void setFirstName();
-        void setLastName();
-        void setNickname();
-        void setLogin();
-        void setPostalAdress();
-        void setEmailAdress();
-        void setFavoriteMeal();
-        void setUnderwearColor();
-        void setDarkestSecret();
-        void setPhoneNumber();
-        void setBirthdayDate();
+        int setFirstName();
+        int setLastName();
+        int setNickname();
+        int setLogin();
+        int setPostalAdress();
+        int setEmailAdress();
+        int setFavoriteMeal();
+        int setUnderwearColor();
+        int setDarkestSecret();
+        int setPhoneNumber();
+        int setBirthdayDate();
 
         std::string getFirstName() const;
         std::string getLastName() const;

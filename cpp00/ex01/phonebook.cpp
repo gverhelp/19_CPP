@@ -5,22 +5,33 @@ Phonebook::Phonebook()
     nbr_contact = 0;
 }
 
-void Phonebook::AddContact()
+int Phonebook::AddContact()
 {
     if (nbr_contact < 8)
     {
         std::cout << "\nYou have chosen to add a contact.\n" << std::endl;
-        contact[nbr_contact].setFirstName();
-        contact[nbr_contact].setLastName();
-        contact[nbr_contact].setNickname();
-        contact[nbr_contact].setLogin();
-        contact[nbr_contact].setPostalAdress();
-        contact[nbr_contact].setEmailAdress();
-        contact[nbr_contact].setPhoneNumber();
-        contact[nbr_contact].setBirthdayDate();
-        contact[nbr_contact].setFavoriteMeal();
-        contact[nbr_contact].setUnderwearColor();
-        contact[nbr_contact].setDarkestSecret();
+        if (contact[nbr_contact].setFirstName() == -1)
+            return (-1);
+        if (contact[nbr_contact].setLastName() == -1)
+            return (-1);
+        if (contact[nbr_contact].setNickname() == -1)
+            return (-1);
+        if (contact[nbr_contact].setLogin() == -1)
+            return (-1);
+        if (contact[nbr_contact].setPostalAdress() == -1)
+            return (-1);
+        if (contact[nbr_contact].setEmailAdress() == -1)
+            return (-1);
+        if (contact[nbr_contact].setPhoneNumber() == -1)
+            return (-1);
+        if (contact[nbr_contact].setBirthdayDate() == -1)
+            return (-1);
+        if (contact[nbr_contact].setFavoriteMeal() == -1)
+            return (-1);
+        if (contact[nbr_contact].setUnderwearColor() == -1)
+            return (-1);
+        if (contact[nbr_contact].setDarkestSecret() == -1)
+            return (-1);
         nbr_contact++;
         std::cout << "\nContact well registered!" << std::endl;
     }
@@ -28,9 +39,9 @@ void Phonebook::AddContact()
     {
         std::cout << "\nSomething wrong happened." << std::endl;
         std::cout << "You have already added 8 contacts. There's no more memory left in your phone." << std::endl;
-        return ;
+        return (0);
     }
-    
+    return (0);
 }
 
 void Phonebook::ShowContact()
@@ -48,7 +59,7 @@ void Phonebook::ShowContact()
     }
 }
 
-void Phonebook::SearchContact()
+int Phonebook::SearchContact()
 {
     std::string ind;
     int index;
@@ -56,14 +67,20 @@ void Phonebook::SearchContact()
     index = 0;
     std::cout << "\nWich contact do you want to look for? Type his index." << std::endl;
     std::cout << "=> ";
-    getline(std::cin, ind);
+    if (!getline(std::cin, ind))
+        return (-1);
+    while (!IsDigit(ind) || ind == "")
+    {
+        std::cout << "\nThe index you typed is not valid." << std::endl;
+        return (0);
+    }
     std::stringstream ss;
     ss << ind;
     ss >> index;
-    if (index > nbr_contact || index == 0)
+    while (index > nbr_contact || index == 0)
     {
         std::cout << "\nThe index you typed is not valid." << std::endl;
-        return ;
+        return (0);
     }
     std::cout << "\nHere is all the informations about the contact you asked for : \n" << std::endl;
     std::cout << "First name : " << contact[index - 1].getFirstName() << std::endl;
@@ -77,6 +94,15 @@ void Phonebook::SearchContact()
     std::cout << "Favorite Meal : " << contact[index - 1].getFavoriteMeal() << std::endl;
     std::cout << "Underwear color : " << contact[index - 1].getUnderwearColor() << std::endl;
     std::cout << "Darkest secret : " << contact[index - 1].getDarkestSecret() << std::endl;
+    return (0);
+}
+
+int Phonebook::IsDigit(std::string str)
+{
+    for (unsigned long int a = 0; a < str.size(); a++)
+        if (isdigit(str[a]) == 0)
+            return (0);
+    return (1);
 }
 
 int Phonebook::getNbrContact() const

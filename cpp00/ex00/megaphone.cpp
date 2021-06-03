@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     }
     for (int a = 1; a < argc; a++)
     {
-        for (int b=0; b < (int)strlen(argv[a]); b++)
+        for (int b = 0; b < (int)strlen(argv[a]); b++)
             putchar(toupper(argv[a][b]));
     }
     putchar('\n');

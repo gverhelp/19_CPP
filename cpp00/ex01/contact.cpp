@@ -2,125 +2,147 @@
 
 Contact::Contact() {}
 
-void Contact::setFirstName()
+int Contact::setFirstName()
 {
     std::cout << "First name : ";
-    getline(std::cin, first_name);
+    if (!getline(std::cin, first_name))
+        return (-1);
     while (first_name == "")
     {
         std::cout << "First name : ";
         getline(std::cin, first_name);
     }
+    return (0);
 }
 
-void Contact::setLastName()
+int Contact::setLastName()
 {
     std::cout << "Last name : ";
-    getline(std::cin, _last_name);
+    if (!getline(std::cin, _last_name))
+        return (-1);
     while (_last_name == "")
     {
         std::cout << "Last name : ";
         getline(std::cin, _last_name);
     }
+    return (0);
 }
 
-void Contact::setNickname()
+int Contact::setNickname()
 {
     std::cout << "Nickame : ";
-    getline(std::cin, nickmane);
+    if (!getline(std::cin, nickmane))
+        return (-1);
     while (nickmane == "")
     {
         std::cout << "Nickame : ";
         getline(std::cin, nickmane);
     }
+    return (0);
 }
 
-void Contact::setLogin()
+int Contact::setLogin()
 {
     std::cout << "Login : ";
-    getline(std::cin, login);
+    if (!getline(std::cin, login))
+        return (-1);
     while (login == "")
     {
         std::cout << "Login : ";
         getline(std::cin, login);
     }
+    return (0);
 }
 
-void Contact::setPostalAdress()
+int Contact::setPostalAdress()
 {
     std::cout << "Postal address : ";
-    getline(std::cin, postal_adress);
+    if (!getline(std::cin, postal_adress))
+        return (-1);
     while (postal_adress == "")
     {
         std::cout << "Postal address : ";
         getline(std::cin, postal_adress);  
     }
+    return (0);
 }
 
-void Contact::setEmailAdress()
+int Contact::setEmailAdress()
 {
     std::cout << "Email adress : ";
-    getline(std::cin, email_adress);
+    if (!getline(std::cin, email_adress))
+        return (-1);
     while (email_adress == "")
     {
         std::cout << "Email adress : ";
         getline(std::cin, email_adress);
     }
+    return (0);
 }
 
-void Contact::setFavoriteMeal()
+int Contact::setFavoriteMeal()
 {
     std::cout << "Favorite Meal : ";
-    getline(std::cin, favorite_meal);
+    if (!getline(std::cin, favorite_meal))
+        return (-1);
     while (favorite_meal == "")
     {
         std::cout << "Favorite Meal : ";
         getline(std::cin, favorite_meal);
     }
+    return (0);
 }
 
-void Contact::setUnderwearColor()
+int Contact::setUnderwearColor()
 {
     std::cout << "Underwear color : ";
-    getline(std::cin, underwear_color);
+    if (!getline(std::cin, underwear_color))
+        return (-1);
     while (underwear_color == "")
     {
         std::cout << "Underwear color : ";
         getline(std::cin, underwear_color);
     }
+    return (0);
 }
 
-void Contact::setDarkestSecret()
+int Contact::setDarkestSecret()
 {
     std::cout << "Darkest secret : ";
-    getline(std::cin, darkest_secret);
+    if (!getline(std::cin, darkest_secret))
+        return (-1);
     while (darkest_secret == "")
     {
         std::cout << "Darkest secret : ";
         getline(std::cin, darkest_secret);
     }
+    return (0);
 }
 
-void Contact::setPhoneNumber()
+int Contact::setPhoneNumber()
 {
     std::cout << "Phone number : ";
-    getline(std::cin, phone_number);
+    if (!getline(std::cin, phone_number))
+        return (-1);
     while (phone_number == "")
     {
         std::cout << "Phone number : ";
         getline(std::cin, phone_number);
     }
+    return (0);
 }
 
-void Contact::setBirthdayDate()
+int Contact::setBirthdayDate()
 {
     std::cout << "Birthday date : ";
-    getline(std::cin, birthday_date);
+    if (!getline(std::cin, birthday_date))
+        return (-1);
     while (birthday_date == "")
     {
         std::cout << "Birthday date : ";
         getline(std::cin, birthday_date);
     }
+    return (0);
 }
 
 std::string Contact::getFirstName() const

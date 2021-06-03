@@ -8,9 +8,10 @@ class Phonebook
     public:
         Phonebook();
 
-        void AddContact();
+        int AddContact();
+        int SearchContact();
+        int IsDigit(std::string str);
         void ShowContact();
-        void SearchContact();
 
         int getNbrContact() const;
 
