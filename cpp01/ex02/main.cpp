@@ -25,6 +25,7 @@ int main()
             return (-1);
     }
     newZombie2 = newZombieEvent.newZombie(inputName);
+    newZombie2->advert();
     std::cout << "Now, give him a type." << std::endl;
     newZombieEvent.setZombieType(*newZombie2);
     newZombie2->advert();
