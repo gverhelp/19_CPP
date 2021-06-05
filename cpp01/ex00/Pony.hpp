@@ -6,20 +6,19 @@
 class Pony
 {
     public:
-        Pony();
+        Pony(std::string nname, std::string aage, std::string sspeed, std::string ccolor);
+        ~Pony();
 
-        void setName();
-        void setAge();
-        void setSpeed();
-
-        std::string getName() const;
-        std::string getAge() const;
-        std::string getSpeed() const;
+        void getPony();
 
     private:
         std::string name;
         std::string age;
         std::string speed;
+        std::string color;
 };
+
+void ponyOnTheStack();
+void ponyOnTheHeap();
 
 #endif
