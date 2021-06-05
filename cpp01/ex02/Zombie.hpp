@@ -9,7 +9,6 @@ class Zombie
         Zombie();
         ~Zombie();
 
-        Zombie *newZombie(std::string name);
         void advert();
 
     private:
