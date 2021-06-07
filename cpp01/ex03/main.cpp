@@ -10,5 +10,6 @@ int main()
     std::cout << "=> ";
     std::cin >> inputNbr;
     ZombieHorde newZombieHorde(inputNbr);
+    newZombieHorde.announce();
     return (0);
 }

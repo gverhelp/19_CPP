@@ -10,7 +10,6 @@ ZombieHorde::ZombieHorde(int n)
     {
         sleep(1);
         newZombie[a].setZombie(getName(), getType());
-        newZombie[a].announce();
     }
     std::cout << "Shhhhht... A Horde of Zombie has just been created! Be careful!" << std::endl;
 }
@@ -18,7 +17,7 @@ ZombieHorde::ZombieHorde(int n)
 ZombieHorde::~ZombieHorde()
 {
     delete [] newZombie;
-    std::cout << "Hey but.. ? They just all died ?" << std::endl;
+    std::cout << "Hey but.. ? They just all died?" << std::endl;
 }
 
 std::string ZombieHorde::getName()
@@ -39,4 +38,10 @@ std::string ZombieHorde::getType()
     srand(time(NULL));
     randomType = rand() % 10;
     return (types[randomType]);
+}
+
+void ZombieHorde::announce()
+{
+    for (int a = 0; a < nbrZombie; a++)
+        newZombie[a].announce();
 }

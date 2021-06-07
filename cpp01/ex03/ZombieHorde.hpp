@@ -12,6 +12,7 @@ class ZombieHorde
 
         std::string getName();
         std::string getType();
+        void        announce();
 
     private:
         int nbrZombie;
