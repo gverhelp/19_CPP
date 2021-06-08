@@ -17,7 +17,7 @@ int ft_filestream(char *fd, char *str1, char *str2)
     std::ifstream ifs("test.txt");
     if (!ifs)
         return (-1);
-    std::ofstream ofs(newFd + ".replace");
+    std::ofstream ofs(newFd.append(".replace"));
     if (!ofs)
         return (-1); 
     while (ifs.get(c))
@@ -30,6 +30,8 @@ int ft_filestream(char *fd, char *str1, char *str2)
             myText.replace(found, newStr1.length(), newStr2);
         ofs << myText;
     }
+    ifs.close();
+    ofs.close();
     return (0);
 }
 

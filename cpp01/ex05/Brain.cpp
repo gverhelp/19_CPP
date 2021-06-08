@@ -13,5 +13,5 @@ Brain::~Brain()
 
 Brain const* Brain::identify() const
 {
-    return (this);
+    return (this); 
 }
