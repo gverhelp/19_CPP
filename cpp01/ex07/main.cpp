@@ -1,14 +1,13 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
 int ft_filestream(char *fd, char *str1, char *str2)
 {
-    std::string newFd = fd;
+    std::string newFd = fd;;
     std::string newStr1 = str1;
     std::string newStr2 = str2;
     std::string myText;
-    int found;
+    std::size_t found;
     char c;
 
     found = 0;
@@ -17,7 +16,7 @@ int ft_filestream(char *fd, char *str1, char *str2)
     std::ifstream ifs("test.txt");
     if (!ifs)
         return (-1);
-    std::ofstream ofs(newFd.append(".replace"));
+    std::ofstream ofs(newFd.append(".replace").c_str());
     if (!ofs)
         return (-1); 
     while (ifs.get(c))
