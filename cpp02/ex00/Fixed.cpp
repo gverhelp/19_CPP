@@ -15,12 +15,11 @@ Fixed::Fixed(Fixed const &copy)
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-    std::cout << "Assignation  operator called" << std::endl;
+    std::cout << "Assignation operator called" << std::endl;
     if (this != &copy)
     {
-        pFixe = copy.pFixe;
+        this->pFixe = copy.getRawBits();
     }
-    pFixe = copy.getRawBits();
     return (*this);
 }
 
