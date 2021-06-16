@@ -8,8 +8,9 @@ class Fixed
 {
     public:
         Fixed();
+        Fixed(Fixed const &copy);
         Fixed(const int intNbr);
-        Fixed(const float doubleNbr);
+        Fixed(const float floatNbr);
 
         Fixed& operator=(Fixed const &copy);
 

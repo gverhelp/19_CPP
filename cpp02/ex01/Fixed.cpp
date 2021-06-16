@@ -5,20 +5,24 @@ Fixed::Fixed()
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int intNbr)
+Fixed::Fixed(Fixed const &copy)
 {
-    (void)intNbr;
-    //////////////////////////////////////////////
-    std::cout << "Integer constructor called" << std::endl;
-//    pFixe = intNbr;
+    std::cout << "Copy constructor called" << std::endl;
+    *this = copy;
 }
 
-Fixed::Fixed(const float doubleNbr)
+Fixed::Fixed(const int intNbr)
 {
-    (void)doubleNbr;
     //////////////////////////////////////////////
-    std::cout << "Double constructor called" << std::endl;
-//    pFixe = doubleNbr;
+    std::cout << "Integer constructor called" << std::endl;
+    pFixe = intNbr << bits;
+}
+
+Fixed::Fixed(const float floatNbr)
+{
+    //////////////////////////////////////////////
+    std::cout << "Float constructor called" << std::endl;
+    pFixe = roundf(floatNbr * (1 << bits));
 }
 
 Fixed::~Fixed()
@@ -51,18 +55,18 @@ int Fixed::getRawBits() const
 int Fixed::toInt() const
 {
     /////////////////////////////
-    return (pFixe);
+    return (pFixe >> bits);
 }
 
 float Fixed::toFloat() const
 {
     /////////////////////////////
-    return (pFixe);
+    return (pFixe / (float)(1 << bits));
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
 {
     /////////////////////////////
-    o << rhs.getRawBits();
+    o << rhs.toFloat();
     return (o);
 }
