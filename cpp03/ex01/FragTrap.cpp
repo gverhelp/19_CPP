@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap()
 {
-    std::cout << "Default consctructor has been called.\n";
+    std::cout << "Default constructor has been called.\n";
     hitPoints = 100;
     maxHitPoints = 100;
     energyPoints = 100;
@@ -33,11 +33,6 @@ FragTrap::FragTrap(FragTrap const & copy)
     *this = copy;
 }
 
-FragTrap::~FragTrap()
-{
-    std::cout << "FR4G-TP <" << Name << "> is .. not right here anymore...\n";
-}
-
 FragTrap& FragTrap::operator=(const FragTrap &copy)
 {
     if (this != &copy)
@@ -53,6 +48,11 @@ FragTrap& FragTrap::operator=(const FragTrap &copy)
         Name = copy.Name;
     }
     return (*this);
+}
+
+FragTrap::~FragTrap()
+{
+    std::cout << "FR4G-TP <" << Name << "> is .. not right here anymore...\n";
 }
 
 void FragTrap::getHitPoints() const

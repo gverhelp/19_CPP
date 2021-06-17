@@ -2,13 +2,42 @@
 
 int main()
 {
-    FragTrap fragou("Garreth");
+    FragTrap champ("Kayn");
 
-    fragou.rangedAttack("King Kong");
-    fragou.meleeAttack("un gros serpent");
-    fragou.takeDamage(50);
-    fragou.takeDamage(6);
-    fragou.takeDamage(-30);
-    fragou.beRepaired(5);
+    champ.rangedAttack("Dr.Mundo");
+    champ.meleeAttack("Zed");
+
+    champ.getHitPoints();
+    champ.takeDamage(200);
+    champ.getHitPoints();
+
+    champ.beRepaired(200);
+    champ.getHitPoints();
+
+    champ.takeDamage(45);
+    champ.getHitPoints();
+
+    champ.takeDamage(2);
+    champ.getHitPoints();
+
+    champ.getEnergyPoints();
+    champ.vaulthunter_dot_exe("Ekko");
+    champ.getEnergyPoints();
+    sleep(1);
+
+    champ.vaulthunter_dot_exe("Seraphine");
+    champ.getEnergyPoints();
+    sleep(1);
+
+    champ.vaulthunter_dot_exe("Lilia");
+    champ.getEnergyPoints();
+    sleep(1);
+
+    champ.vaulthunter_dot_exe("Gnar");
+    champ.getEnergyPoints();
+    sleep(1);
+
+    champ.vaulthunter_dot_exe("Syndra");
+    champ.getEnergyPoints();
     return (0);
 }

@@ -2,7 +2,6 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
-# include <unistd.h>
 
 class FragTrap
 {
@@ -10,7 +9,7 @@ class FragTrap
         FragTrap();
         FragTrap(std::string newName);
         FragTrap(FragTrap const & copy);
-        FragTrap & operator=(FragTrap const & rhs);
+        FragTrap & operator=(FragTrap const & copy);
         ~FragTrap();
 
         void getHitPoints() const;
