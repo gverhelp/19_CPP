@@ -2,6 +2,8 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
+# include <time.h>
+# include <stdlib.h>
 
 class FragTrap
 {

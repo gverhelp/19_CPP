@@ -15,6 +15,7 @@ class ScavTrap : public ClapTrap
         ScavTrap & operator=(ScavTrap const & copy);
         ~ScavTrap();
 
+        std::string getName() const;
         void challengeNewcomer();
 };
 

@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-# include <unistd.h>
+#include <unistd.h>
 
 int main()
 {

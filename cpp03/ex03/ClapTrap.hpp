@@ -1,30 +1,28 @@
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
-# include <unistd.h>
-# include <time.h>
-# include <stdlib.h>
 
-class FragTrap
+class ClapTrap
 {
     public:
-        FragTrap();
-        FragTrap(std::string newName);
-        FragTrap(FragTrap const & copy);
-        FragTrap & operator=(FragTrap const & rhs);
-        ~FragTrap();
+        ClapTrap();
+        ClapTrap(std::string newName);
+        ClapTrap(ClapTrap const & copy);
+        ClapTrap & operator=(ClapTrap const & copy);
+        ~ClapTrap();
 
         void getHitPoints() const;
         void getEnergyPoints() const;
+        std::string getName() const;
 
         void rangedAttack(std::string const & target);
         void meleeAttack(std::string const & target);
         void takeDamage(unsigned int amount);
+        void losingEnergy(unsigned int amount);
         void beRepaired(unsigned int amount);
-        void vaulthunter_dot_exe(std::string const & target);
 
-    private:
+    protected:
         int hitPoints;
         int maxHitPoints;
         int energyPoints;

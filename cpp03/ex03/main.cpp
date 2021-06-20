@@ -1,5 +1,6 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 #include <unistd.h>
 
 int main()
@@ -67,5 +68,18 @@ int main()
 
     champ2.vaulthunter_dot_exe("Kai'sa");
     champ2.getEnergyPoints();
+
+    std::cout << "\n-------------- NinjaTrap --------------\n\n";
+
+    ScavTrap champ3("Caitlyn");
+	FragTrap champ4("Nidalee");
+    ClapTrap champ5("Aatrox");
+    NinjaTrap champ6("Volibear");
+    NinjaTrap champ7("Gwen");
+
+    champ6.ninjaShoebox(champ3);
+    champ6.ninjaShoebox(champ4);
+    champ6.ninjaShoebox(champ5);
+    champ6.ninjaShoebox(champ7);
     return (0);
 }
