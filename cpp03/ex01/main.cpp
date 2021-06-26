@@ -4,7 +4,9 @@ int main()
 {
     ScavTrap champ("Kayn");
 
+    champ.getEnergyPoints();
     champ.attack("Dr.Mundo");
+    champ.getEnergyPoints();
 
     champ.getHitPoints();
     champ.takeDamage(200);
@@ -12,6 +14,7 @@ int main()
 
     champ.beRepaired(200);
     champ.getHitPoints();
+    champ.getEnergyPoints();
 
     champ.takeDamage(45);
     champ.getHitPoints();

@@ -1,17 +1,15 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap():
-ClapTrap(100, 100, 100, 100, 30, 0)
+ClapTrap(100, 100, 100, 100, 30, 0, "")
 {
     std::cout << "Default FragTrap constructor has been called.\n";
-    Name = "";
 }
 
 FragTrap::FragTrap(std::string newName):
-ClapTrap(100, 100, 100, 100, 30, 0)
+ClapTrap(100, 100, 100, 100, 30, 0, newName)
 {
-    std::cout << "First Overloaded FrapTrap constructor has been called.\n";
-    Name = newName;
+    std::cout << "First Overloaded FragTrap constructor has been called.\n";
 }
 
 FragTrap::FragTrap(int type)

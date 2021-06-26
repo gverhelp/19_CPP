@@ -3,12 +3,13 @@
 
 int main()
 {
-	ScavTrap champ("Kayn");
-	FragTrap champ2("Ekko");
-
     std::cout << "\n-------------- ScavTrap --------------\n\n";
 
+    ScavTrap champ("Kayn");
+
+    champ.getEnergyPoints();
     champ.attack("Diana");
+    champ.getEnergyPoints();
 
     champ.getHitPoints();
     champ.takeDamage(200);
@@ -16,6 +17,7 @@ int main()
 
     champ.beRepaired(200);
     champ.getHitPoints();
+    champ.getEnergyPoints();
 
     champ.takeDamage(45);
     champ.getHitPoints();
@@ -27,7 +29,11 @@ int main()
 
 	std::cout << "\n-------------- FragTrap --------------\n\n";
 
+    FragTrap champ2("Ekko");
+
+    champ2.getEnergyPoints();
     champ2.attack("Viktor");
+    champ2.getEnergyPoints();
 
     champ2.getHitPoints();
     champ2.takeDamage(200);
@@ -35,6 +41,7 @@ int main()
 
     champ2.beRepaired(200);
     champ2.getHitPoints();
+    champ2.getEnergyPoints();
 
     champ2.takeDamage(45);
     champ2.getHitPoints();

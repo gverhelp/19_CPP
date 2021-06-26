@@ -64,7 +64,13 @@ void ClapTrap::getEnergyPoints() const
 
 void ClapTrap::attack(std::string const & target)
 {
-    std::cout << "CL4P-TP <" << Name << "> attaque <" << target << ">, lui causant <" << attackDamage << "> points de dégâts !\n";
+    if ((energyPoints - 7) < 0)
+        std::cout << "CL4P-TP <" << Name << "> n'a pas assez d'énergie pour attaquer.\n";
+    else
+    {
+        energyPoints -= 7;
+        std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> ce qui lui coute 20 points d'énergie et cause <" << attackDamage << "> points de dégâts !\n";
+    }
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -85,5 +91,8 @@ void ClapTrap::beRepaired(unsigned int amount)
     hitPoints += amount;
     if (hitPoints > maxHitPoints)
         hitPoints = maxHitPoints;
-    std::cout << "CL4P-TP <" << Name << "> se fait heal de <" << amount << "> points de vie !\n";
+    energyPoints += amount;
+    if (energyPoints > maxEnergyPoints)
+        energyPoints = maxEnergyPoints;
+    std::cout << "CL4P-TP <" << Name << "> se fait heal de <" << amount << "> points de vie et récupère <" << amount << "> points d'énergie !\n";
 }

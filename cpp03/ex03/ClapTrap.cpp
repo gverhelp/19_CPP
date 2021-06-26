@@ -3,6 +3,13 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "Default ClapTrap consctructor has been called.\n";
+    hitPoints = 0;
+    maxHitPoints = 0;
+    energyPoints = 0;
+    maxEnergyPoints = 0;
+    attackDamage = 0;
+    armorDamageReduction = 0;
+    Name = "";
 }
 
 ClapTrap::ClapTrap(std::string newName)
@@ -17,7 +24,7 @@ ClapTrap::ClapTrap(std::string newName)
     Name = newName;
 }
 
-ClapTrap::ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxenergypoints, int attackdamage, int armordamagereduction)
+ClapTrap::ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxenergypoints, int attackdamage, int armordamagereduction, std::string newName)
 {
     std::cout << "Second Overloaded ClapTrap constructor has been called.\n";
     hitPoints = hitpoints;
@@ -26,6 +33,7 @@ ClapTrap::ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxene
     maxEnergyPoints = maxenergypoints;
     attackDamage = attackdamage;
     armorDamageReduction = armordamagereduction;
+    Name = newName;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & copy)
@@ -78,7 +86,13 @@ void ClapTrap::getEnergyPoints() const
 
 void ClapTrap::attack(std::string const & target)
 {
-    std::cout << "CL4P-TP <" << Name << "> attaque <" << target << ">, lui causant <" << attackDamage << "> points de dégâts !\n";
+    if ((energyPoints - 20) < 0)
+        std::cout << "CL4P-TP <" << Name << "> n'a pas assez d'énergie pour attaquer.\n";
+    else
+    {
+        energyPoints -= 20;
+        std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> ce qui lui coute 20 points d'énergie et cause <" << attackDamage << "> points de dégâts !\n";
+    }
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -99,5 +113,8 @@ void ClapTrap::beRepaired(unsigned int amount)
     hitPoints += amount;
     if (hitPoints > maxHitPoints)
         hitPoints = maxHitPoints;
-    std::cout << "CL4P-TP <" << Name << "> se fait heal de <" << amount << "> points de vie !\n";
+    energyPoints += amount;
+    if (energyPoints > maxEnergyPoints)
+        energyPoints = maxEnergyPoints;
+    std::cout << "CL4P-TP <" << Name << "> se fait heal de <" << amount << "> points de vie et récupère <" << amount << "> points d'énergie !\n";
 }

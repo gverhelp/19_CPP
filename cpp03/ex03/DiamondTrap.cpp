@@ -1,20 +1,18 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap():
+FragTrap(1), ScavTrap(1)
 {
     std::cout << "Default DiamondTrap constructor has been called.\n";
     Name = "";
-    FragTrap(1);
-    ScavTrap(1);
 }
 
-DiamondTrap::DiamondTrap(std::string newName)
+DiamondTrap::DiamondTrap(std::string newName):
+FragTrap(1), ScavTrap(1)
 {
     std::cout << "Overloaded DiamondTrap constructor has been called.\n";
     Name = newName;
     this->setName(Name);
-    FragTrap(1);
-    ScavTrap(1);
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & copy)
