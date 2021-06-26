@@ -2,10 +2,9 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
-# include <time.h>
-# include <stdlib.h>
+# include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
     public:
         ScavTrap();
@@ -14,25 +13,7 @@ class ScavTrap
         ScavTrap & operator=(ScavTrap const & copy);
         ~ScavTrap();
 
-        void getHitPoints() const;
-        void getEnergyPoints() const;
-
-        void rangedAttack(std::string const & target);
-        void meleeAttack(std::string const & target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
-        void challengeNewcomer();
-
-    private:
-        int hitPoints;
-        int maxHitPoints;
-        int energyPoints;
-        int maxEnergyPoints;
-        int level;
-        int meleeAttackDamage;
-        int rangedAttackDamage;
-        int armorDamageReduction;
-        std::string Name;
+        void guardGate();
 };
 
 #endif

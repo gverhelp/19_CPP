@@ -3,29 +3,25 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "Default ClapTrap consctructor has been called.\n";
+    hitPoints = 10;
+    maxHitPoints = 10;
+    energyPoints = 10;
+    maxEnergyPoints = 10;
+    attackDamage = 0;
+    armorDamageReduction = 0;
+    Name = "";
 }
 
 ClapTrap::ClapTrap(std::string newName)
 {
-    std::cout << "First Overloaded ClapTrap constructor has been called.\n";
-    hitPoints = 0;
-    maxHitPoints = 0;
-    energyPoints = 0;
-    maxEnergyPoints = 0;
+    std::cout << "Overloaded ClapTrap constructor has been called.\n";
+    hitPoints = 10;
+    maxHitPoints = 10;
+    energyPoints = 10;
+    maxEnergyPoints = 10;
     attackDamage = 0;
     armorDamageReduction = 0;
     Name = newName;
-}
-
-ClapTrap::ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxenergypoints, int attackdamage, int armordamagereduction)
-{
-    std::cout << "Second Overloaded ClapTrap constructor has been called.\n";
-    hitPoints = hitpoints;
-    maxHitPoints = maxhitspoints;
-    energyPoints = energypoint;
-    maxEnergyPoints = maxenergypoints;
-    attackDamage = attackdamage;
-    armorDamageReduction = armordamagereduction;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & copy)

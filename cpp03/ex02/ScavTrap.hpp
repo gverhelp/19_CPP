@@ -2,8 +2,6 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
-# include <time.h>
-# include <stdlib.h>
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
@@ -15,7 +13,7 @@ class ScavTrap : public ClapTrap
         ScavTrap & operator=(ScavTrap const & copy);
         ~ScavTrap();
 
-        void challengeNewcomer();
+        void guardGate();
 };
 
 #endif

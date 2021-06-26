@@ -1,6 +1,5 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include <unistd.h>
 
 int main()
 {
@@ -9,8 +8,7 @@ int main()
 
     std::cout << "\n-------------- ScavTrap --------------\n\n";
 
-    champ.rangedAttack("Diana");
-    champ.meleeAttack("Renekton");
+    champ.attack("Diana");
 
     champ.getHitPoints();
     champ.takeDamage(200);
@@ -25,15 +23,11 @@ int main()
     champ.takeDamage(2);
     champ.getHitPoints();
 
-    champ.challengeNewcomer();
-    sleep(1);
-
-	champ.challengeNewcomer();
+    champ.guardGate();
 
 	std::cout << "\n-------------- FragTrap --------------\n\n";
 
-    champ2.rangedAttack("Viktor");
-    champ2.meleeAttack("Elise");
+    champ2.attack("Viktor");
 
     champ2.getHitPoints();
     champ2.takeDamage(200);
@@ -48,24 +42,6 @@ int main()
     champ2.takeDamage(2);
     champ2.getHitPoints();
 
-    champ2.getEnergyPoints();
-    champ2.vaulthunter_dot_exe("Skarner");
-    champ2.getEnergyPoints();
-    sleep(1);
-
-    champ2.vaulthunter_dot_exe("Qiyana");
-    champ2.getEnergyPoints();
-    sleep(1);
-
-    champ2.vaulthunter_dot_exe("Hecarim");
-    champ2.getEnergyPoints();
-    sleep(1);
-
-    champ2.vaulthunter_dot_exe("Sivir");
-    champ2.getEnergyPoints();
-    sleep(1);
-
-    champ2.vaulthunter_dot_exe("Kai'sa");
-    champ2.getEnergyPoints();
+    champ2.highFivesGuys();
     return (0);
 }

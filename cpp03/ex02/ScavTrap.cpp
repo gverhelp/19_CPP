@@ -1,30 +1,16 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap():
+ClapTrap(100, 100, 50, 50, 20, 0)
 {
     std::cout << "Default ScavTrap constructor has been called.\n";
-    hitPoints = 100;
-    maxHitPoints = 100;
-    energyPoints = 50;
-    maxEnergyPoints = 50;
-    level = 1;
-    meleeAttackDamage = 20;
-    rangedAttackDamage = 15;
-    armorDamageReduction = 3;
     Name = "";
 }
 
-ScavTrap::ScavTrap(std::string newName)
+ScavTrap::ScavTrap(std::string newName):
+ClapTrap(100, 100, 50, 50, 20, 0)
 {
     std::cout << "Overloaded ScavTrap constructor has been called.\n";
-    hitPoints = 100;
-    maxHitPoints = 100;
-    energyPoints = 50;
-    maxEnergyPoints = 50;
-    level = 1;
-    meleeAttackDamage = 20;
-    rangedAttackDamage = 15;
-    armorDamageReduction = 3;
     Name = newName;
 }
 
@@ -34,7 +20,7 @@ ScavTrap::ScavTrap(ScavTrap const & copy)
     *this = copy;
 }
 
-ScavTrap& ScavTrap::operator=(ScavTrap const & copy)
+ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 {
     if (this != &copy)
     {
@@ -42,9 +28,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const & copy)
         maxHitPoints = copy.maxHitPoints;
         energyPoints = copy.energyPoints;
         maxEnergyPoints = copy.maxEnergyPoints;
-        level = copy.level;
-        meleeAttackDamage = copy.meleeAttackDamage;
-        rangedAttackDamage = copy.rangedAttackDamage;
+        attackDamage = copy.attackDamage;
         armorDamageReduction = copy.armorDamageReduction;
         Name = copy.Name;
     }
@@ -56,13 +40,7 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructor has been called.\n";
 }
 
-void ScavTrap::challengeNewcomer()
+void ScavTrap::guardGate()
 {
-    int randomChall;
-    std::string challenges[5] = {"Have to eat yaourt until the end of your life", "Have to play only Seraphine in ranked",
-        "Have to do a tiktok dance", "Have not to use fan all summer long", "Have to pee in your drawer all your life long"};
-
-    srand(time(NULL));
-    randomChall = rand() % 5;
-    std::cout << "SC4V-TP <" << Name << "> te confronte à un challenge. Ce dernier est le suivant : " << challenges[randomChall] << "\nBonne chance à toi...\n";
+    std::cout << "ScavTrap have enterred in Gate keeper mode.\n";
 }

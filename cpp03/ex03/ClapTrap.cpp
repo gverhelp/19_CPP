@@ -2,27 +2,40 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default ClapTrap constructor has been called.\n";
+    std::cout << "Default ClapTrap consctructor has been called.\n";
 }
 
 ClapTrap::ClapTrap(std::string newName)
 {
-    std::cout << "Overloaded ClapTrap constructor has been called.\n";
-    hitPoints = 100;
-    maxHitPoints = 100;
-    energyPoints = 50;
-    maxEnergyPoints = 50;
-    level = 1;
-    meleeAttackDamage = 20;
-    rangedAttackDamage = 15;
-    armorDamageReduction = 3;
+    std::cout << "First Overloaded ClapTrap constructor has been called.\n";
+    hitPoints = 0;
+    maxHitPoints = 0;
+    energyPoints = 0;
+    maxEnergyPoints = 0;
+    attackDamage = 0;
+    armorDamageReduction = 0;
     Name = newName;
+}
+
+ClapTrap::ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxenergypoints, int attackdamage, int armordamagereduction)
+{
+    std::cout << "Second Overloaded ClapTrap constructor has been called.\n";
+    hitPoints = hitpoints;
+    maxHitPoints = maxhitspoints;
+    energyPoints = energypoint;
+    maxEnergyPoints = maxenergypoints;
+    attackDamage = attackdamage;
+    armorDamageReduction = armordamagereduction;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & copy)
 {
-    std::cout << "Copy ClapTrap constructor has been called.\n";
     *this = copy;
+}
+
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap destructor has been called.\n";
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
@@ -33,23 +46,21 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
         maxHitPoints = copy.maxHitPoints;
         energyPoints = copy.energyPoints;
         maxEnergyPoints = copy.maxEnergyPoints;
-        level = copy.level;
-        meleeAttackDamage = copy.meleeAttackDamage;
-        rangedAttackDamage = copy.rangedAttackDamage;
+        attackDamage = copy.attackDamage;
         armorDamageReduction = copy.armorDamageReduction;
         Name = copy.Name;
     }
     return (*this);
 }
 
-ClapTrap::~ClapTrap()
+void ClapTrap::setName(std::string newName)
 {
-    std::cout << "ClapTrap destructor has been called.\n";
+    Name = newName.append(" ClapTrap");
 }
 
 std::string ClapTrap::getName() const
 {
-    return (Name);
+    return this->Name;
 }
 
 void ClapTrap::getHitPoints() const
@@ -65,14 +76,9 @@ void ClapTrap::getEnergyPoints() const
     std::cout << "CL4P-TP <" << Name << "> possède <" << energyPoints << "> points d'énergie !\n";
 }
 
-void ClapTrap::rangedAttack(std::string const & target)
+void ClapTrap::attack(std::string const & target)
 {
-    std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> à distance, causant <" << rangedAttackDamage << "> points de dégâts !\n";
-}
-
-void ClapTrap::meleeAttack(std::string const & target)
-{
-    std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> en mélée, causant <" << meleeAttackDamage << "> points de dégâts !\n";
+    std::cout << "CL4P-TP <" << Name << "> attaque <" << target << ">, lui causant <" << attackDamage << "> points de dégâts !\n";
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -86,14 +92,6 @@ void ClapTrap::takeDamage(unsigned int amount)
     std::cout << "CL4P-TP <" << Name << "> se fait attaquer et prend <" << damageTook << "> points de dégâts !\n";
     if (hitPoints <= 0)
         hitPoints = 0;
-}
-
-void ClapTrap::losingEnergy(unsigned int amount)
-{
-    energyPoints -= amount;
-    if (energyPoints < 0)
-        energyPoints = 0;
-    std::cout << "CL4P-TP <" << Name << "> est de plus en plus fatigué, il perd en énergie !\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

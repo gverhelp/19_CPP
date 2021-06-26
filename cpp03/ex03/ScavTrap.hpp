@@ -2,21 +2,19 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
-# include <time.h>
-# include <stdlib.h>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
     public:
         ScavTrap();
         ScavTrap(std::string newName);
+        ScavTrap(int type);
         ScavTrap(ScavTrap const & copy);
         ScavTrap & operator=(ScavTrap const & copy);
         ~ScavTrap();
 
-        std::string getName() const;
-        void challengeNewcomer();
+        void guardGate();
 };
 
 #endif

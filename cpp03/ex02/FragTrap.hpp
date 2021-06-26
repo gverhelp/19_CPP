@@ -2,8 +2,6 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
-# include <time.h>
-# include <stdlib.h>
 # include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
@@ -15,7 +13,7 @@ class FragTrap : public ClapTrap
         FragTrap & operator=(FragTrap const & copy);
         ~FragTrap();
 
-        void vaulthunter_dot_exe(std::string const & target);
+        void highFivesGuys();
 };
 
 #endif

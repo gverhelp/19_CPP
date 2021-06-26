@@ -7,15 +7,16 @@ class ClapTrap
 {
     public:
         ClapTrap();
+        ClapTrap(std::string newName);
+        ClapTrap(int hitpoints, int maxhitspoints, int energypoint, int maxenergypoints, int attackdamage, int armordamagereduction);
         ClapTrap(ClapTrap const & copy);
-        ClapTrap & operator=(ClapTrap const & copy);
+        ClapTrap & operator=(ClapTrap const & rhs);
         ~ClapTrap();
 
         void getHitPoints() const;
         void getEnergyPoints() const;
 
-        void rangedAttack(std::string const & target);
-        void meleeAttack(std::string const & target);
+        void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 
@@ -24,9 +25,7 @@ class ClapTrap
         int maxHitPoints;
         int energyPoints;
         int maxEnergyPoints;
-        int level;
-        int meleeAttackDamage;
-        int rangedAttackDamage;
+        int attackDamage;
         int armorDamageReduction;
         std::string Name;
 };

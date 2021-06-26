@@ -1,17 +1,16 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
-#include <unistd.h>
+#include "DiamondTrap.hpp"
 
 int main()
 {
 	ScavTrap champ("Kayn");
 	FragTrap champ2("Ekko");
+    DiamondTrap champ3("Annie");
 
     std::cout << "\n-------------- ScavTrap --------------\n\n";
 
-    champ.rangedAttack("Diana");
-    champ.meleeAttack("Renekton");
+    champ.attack("Diana");
 
     champ.getHitPoints();
     champ.takeDamage(200);
@@ -26,15 +25,11 @@ int main()
     champ.takeDamage(2);
     champ.getHitPoints();
 
-    champ.challengeNewcomer();
-    sleep(1);
-
-	champ.challengeNewcomer();
+    champ.guardGate();
 
 	std::cout << "\n-------------- FragTrap --------------\n\n";
 
-    champ2.rangedAttack("Viktor");
-    champ2.meleeAttack("Elise");
+    champ2.attack("Viktor");
 
     champ2.getHitPoints();
     champ2.takeDamage(200);
@@ -49,37 +44,29 @@ int main()
     champ2.takeDamage(2);
     champ2.getHitPoints();
 
-    champ2.getEnergyPoints();
-    champ2.vaulthunter_dot_exe("Skarner");
-    champ2.getEnergyPoints();
-    sleep(1);
+    champ2.highFivesGuys();
 
-    champ2.vaulthunter_dot_exe("Qiyana");
-    champ2.getEnergyPoints();
-    sleep(1);
+    std::cout << "\n------------ DiamondTrap ------------\n\n";
 
-    champ2.vaulthunter_dot_exe("Hecarim");
-    champ2.getEnergyPoints();
-    sleep(1);
+    champ3.attack("Sejuani");
+    
+    champ3.getNameDiamond();
 
-    champ2.vaulthunter_dot_exe("Sivir");
-    champ2.getEnergyPoints();
-    sleep(1);
+    champ3.getHitPoints();
+    champ3.takeDamage(200);
+    champ3.getHitPoints();
 
-    champ2.vaulthunter_dot_exe("Kai'sa");
-    champ2.getEnergyPoints();
+    champ3.beRepaired(200);
+    champ3.getHitPoints();
 
-    std::cout << "\n-------------- NinjaTrap --------------\n\n";
+    champ3.takeDamage(45);
+    champ3.getHitPoints();
 
-    ScavTrap champ3("Caitlyn");
-	FragTrap champ4("Nidalee");
-    ClapTrap champ5("Aatrox");
-    NinjaTrap champ6("Volibear");
-    NinjaTrap champ7("Gwen");
+    champ3.takeDamage(2);
+    champ3.getHitPoints();
 
-    champ6.ninjaShoebox(champ3);
-    champ6.ninjaShoebox(champ4);
-    champ6.ninjaShoebox(champ5);
-    champ6.ninjaShoebox(champ7);
+    champ3.whoAmI();
+    champ3.highFivesGuys();
+    champ3.guardGate();
     return (0);
 }
