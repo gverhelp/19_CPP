@@ -13,14 +13,12 @@ Fixed::Fixed(Fixed const &copy)
 
 Fixed::Fixed(const int intNbr)
 {
-    //////////////////////////////////////////////
     std::cout << "Integer constructor called" << std::endl;
     pFixe = intNbr << bits;
 }
 
 Fixed::Fixed(const float floatNbr)
 {
-    //////////////////////////////////////////////
     std::cout << "Float constructor called" << std::endl;
     pFixe = roundf(floatNbr * (1 << bits));
 }
@@ -32,7 +30,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-    std::cout << "Assignation  operator called" << std::endl;
+    std::cout << "Assignation operator called" << std::endl;
     if (this != &copy)
     {
         this->pFixe = copy.getRawBits();
@@ -54,19 +52,16 @@ int Fixed::getRawBits() const
 
 int Fixed::toInt() const
 {
-    /////////////////////////////
     return (pFixe >> bits);
 }
 
 float Fixed::toFloat() const
 {
-    /////////////////////////////
-    return (pFixe / (float)(1 << bits));
+    return ((float)pFixe / (1 << bits));
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
 {
-    /////////////////////////////
     o << rhs.toFloat();
     return (o);
 }
