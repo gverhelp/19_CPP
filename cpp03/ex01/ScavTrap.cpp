@@ -12,7 +12,8 @@ ClapTrap(100, 100, 50, 50, 20, 0, newName)
     std::cout << "Overloaded ScavTrap constructor has been called.\n";
 }
 
-ScavTrap::ScavTrap(ScavTrap const & copy)
+ScavTrap::ScavTrap(ScavTrap const & copy):
+ClapTrap()
 {
     std::cout << "Copy ScavTrap constructor has been called.\n";
     *this = copy;

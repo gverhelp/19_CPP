@@ -12,7 +12,8 @@ ClapTrap(100, 100, 100, 100, 30, 0, newName)
     std::cout << "Overloaded FragTrap constructor has been called.\n";
 }
 
-FragTrap::FragTrap(FragTrap const & copy)
+FragTrap::FragTrap(FragTrap const & copy):
+ClapTrap()
 {
     std::cout << "Copy FragTrap constructor has been called.\n";
     *this = copy;

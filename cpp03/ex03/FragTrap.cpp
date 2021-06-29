@@ -22,7 +22,8 @@ FragTrap::FragTrap(int type)
     armorDamageReduction = 0;
 }
 
-FragTrap::FragTrap(FragTrap const & copy)
+FragTrap::FragTrap(FragTrap const & copy):
+ClapTrap()
 {
     std::cout << "Copy FragTrap constructor has been called.\n";
     *this = copy;

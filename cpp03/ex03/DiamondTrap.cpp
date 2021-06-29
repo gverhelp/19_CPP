@@ -15,7 +15,8 @@ FragTrap(1), ScavTrap(1)
     this->setName(Name);
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const & copy)
+DiamondTrap::DiamondTrap(DiamondTrap const & copy):
+ClapTrap(), FragTrap(1), ScavTrap(1)
 {
     std::cout << "Copy DiamondTrap constructor has been called.\n";
     *this = copy;

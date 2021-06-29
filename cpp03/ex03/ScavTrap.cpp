@@ -21,7 +21,8 @@ ScavTrap::ScavTrap(int type)
     maxEnergyPoints = 50;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & copy)
+ScavTrap::ScavTrap(ScavTrap const & copy):
+ClapTrap()
 {
     std::cout << "Copy ScavTrap constructor has been called.\n";
     *this = copy;
@@ -45,6 +46,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap destructor has been called.\n";
+}
+
+void ScavTrap::attack(std::string const & target)
+{
+    std::cout << "ScavTrap::attack method called.\n";
+    this->attackk(target);
 }
 
 void ScavTrap::guardGate()

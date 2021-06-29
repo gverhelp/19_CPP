@@ -84,7 +84,7 @@ void ClapTrap::getEnergyPoints() const
     std::cout << "CL4P-TP <" << Name << "> possède <" << energyPoints << "> points d'énergie !\n";
 }
 
-void ClapTrap::attack(std::string const & target)
+void ClapTrap::attackk(std::string const & target)
 {
     if ((energyPoints - 20) < 0)
         std::cout << "CL4P-TP <" << Name << "> n'a pas assez d'énergie pour attaquer.\n";
