@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default ClapTrap consctructor has been called.\n";
+    std::cout << "Default ClapTrap constructor has been called.\n";
     hitPoints = 10;
     maxHitPoints = 10;
     energyPoints = 10;
@@ -26,6 +26,7 @@ ClapTrap::ClapTrap(std::string newName)
 
 ClapTrap::ClapTrap(ClapTrap const & copy)
 {
+    std::cout << "ClapTrap copy constructor has been called.\n";
     *this = copy;
 }
 
