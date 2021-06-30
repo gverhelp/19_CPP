@@ -70,7 +70,7 @@ void ClapTrap::attack(std::string const & target)
     else
     {
         energyPoints -= 7;
-        std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> ce qui lui coute 20 points d'énergie et cause <" << attackDamage << "> points de dégâts !\n";
+        std::cout << "CL4P-TP <" << Name << "> attaque <" << target << "> ce qui lui coute 7 points d'énergie et cause <" << attackDamage << "> points de dégâts !\n";
     }
 }
 

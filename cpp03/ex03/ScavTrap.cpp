@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(int type)
 }
 
 ScavTrap::ScavTrap(ScavTrap const & copy):
-ClapTrap()
+ClapTrap(copy)
 {
     std::cout << "Copy ScavTrap constructor has been called.\n";
     *this = copy;
@@ -32,13 +32,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 {
     if (this != &copy)
     {
-        hitPoints = copy.hitPoints;
-        maxHitPoints = copy.maxHitPoints;
-        energyPoints = copy.energyPoints;
-        maxEnergyPoints = copy.maxEnergyPoints;
-        attackDamage = copy.attackDamage;
-        armorDamageReduction = copy.armorDamageReduction;
-        Name = copy.Name;
+        ClapTrap::operator=(copy);
     }
     return (*this);
 }

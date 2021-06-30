@@ -16,7 +16,7 @@ FragTrap(1), ScavTrap(1)
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & copy):
-ClapTrap(), FragTrap(1), ScavTrap(1)
+ClapTrap(copy), FragTrap(1), ScavTrap(1)
 {
     std::cout << "Copy DiamondTrap constructor has been called.\n";
     *this = copy;
@@ -26,13 +26,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &copy)
 {
     if (this != &copy)
     {
-        hitPoints = copy.hitPoints;
-        maxHitPoints = copy.maxHitPoints;
-        energyPoints = copy.energyPoints;
-        maxEnergyPoints = copy.maxEnergyPoints;
-        attackDamage = copy.attackDamage;
-        armorDamageReduction = copy.armorDamageReduction;
-        Name = copy.Name;
+        ClapTrap::operator=(copy);
     }
     return (*this);
 }
