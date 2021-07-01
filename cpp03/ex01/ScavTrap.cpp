@@ -33,6 +33,17 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructor has been called.\n";
 }
 
+void ScavTrap::attack(std::string const & target)
+{
+    if ((energyPoints - 20) < 0)
+        std::cout << "SC4V-TP <" << Name << "> n'a pas assez d'énergie pour attaquer.\n";
+    else
+    {
+        energyPoints -= 20;
+        std::cout << "SC4V-TP <" << Name << "> attaque <" << target << "> ce qui lui coute 20 points d'énergie et cause <" << attackDamage << "> points de dégâts !\n";
+    }
+}
+
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap have enterred in Gate keeper mode.\n";

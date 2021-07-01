@@ -36,9 +36,9 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap destructor has been called.\n";
 }
 
-void DiamondTrap::getNameDiamond()
+void DiamondTrap::attack(std::string const & target)
 {
-    std::cout << "My name is <" << Name << ">.\n";
+    ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()

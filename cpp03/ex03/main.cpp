@@ -9,7 +9,7 @@ int main()
     ScavTrap champ("Kayn");
 
     champ.getEnergyPoints();
-    champ.attackk("Diana");
+    champ.attack("Diana");
     champ.getEnergyPoints();
 
     champ.getHitPoints();
@@ -33,7 +33,7 @@ int main()
     FragTrap champ2("Ekko");
 
     champ2.getEnergyPoints();
-    champ2.attackk("Viktor");
+    champ2.attack("Viktor");
     champ2.getEnergyPoints();
 
     champ2.getHitPoints();
@@ -59,8 +59,6 @@ int main()
     champ3.getEnergyPoints();
     champ3.attack("Sejuani");
     champ3.getEnergyPoints();
-    
-    champ3.getNameDiamond();
 
     champ3.getHitPoints();
     champ3.takeDamage(200);
