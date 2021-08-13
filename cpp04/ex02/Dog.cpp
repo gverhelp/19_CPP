@@ -4,7 +4,6 @@ Dog::Dog() :
 Animal("Dog")
 {
     std::cout << "Default Dog constructor has been called.\n";
-    _DogBrain = new Brain();
 }
 
 Dog::Dog(Dog const &copy) :
@@ -16,11 +15,8 @@ Animal(copy)
 
 Dog& Dog::operator=(const Dog &copy)
 {
-    std::cout << "Overloaded Dog operator has been called.\n";
     if (this != &copy)
     {
-        delete this->_DogBrain;
-        _DogBrain = new Brain(*copy._DogBrain);
         Animal::operator=(copy);
     }
     return (*this);
@@ -29,7 +25,6 @@ Dog& Dog::operator=(const Dog &copy)
 Dog::~Dog()
 {
     std::cout << "Destructor Dog has been called.\n";
-    delete _DogBrain;
 }
 
 void Dog::makeSound() const

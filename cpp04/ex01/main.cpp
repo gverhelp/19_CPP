@@ -4,7 +4,18 @@
 
 int main()
 {
-    std::cout << "\n***** My main *****\n\n";
+    std::cout << "\n***** My main : Default and Overload *****\n\n";
+    Dog *dog1 = new Dog;
+    Cat *cat1 = new Cat;
+    Dog *dog2 = new Dog(*dog1);
+    Cat *cat2 = new Cat(*cat1);
+
+    delete dog1;
+    delete cat1;
+    delete dog2;
+    delete cat2;
+
+    std::cout << "\n***** My main : Default and Overload *****\n\n";
     int size;
     int compt;
 
