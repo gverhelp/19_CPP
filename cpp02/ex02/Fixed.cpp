@@ -1,7 +1,6 @@
 # include "Fixed.hpp"
 
-Fixed::Fixed() :
-pFixe(0)
+Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -12,8 +11,7 @@ Fixed::Fixed(const int i)
 	pFixe = (i << bits);
 }
 
-Fixed::Fixed(const float i) :
-pFixe(i)
+Fixed::Fixed(const float i)
 {
 	std::cout << "Float constructor called" << std::endl;
 	pFixe = roundf(i * (1 << bits));
@@ -62,9 +60,9 @@ float Fixed::toFloat(void) const
 	return ((float)pFixe / (1 << bits));
 }
 
-std::ostream &operator<<(std::ostream &output_stream, const Fixed &f)
+std::ostream &operator<<(std::ostream &o, const Fixed &rhs)
 {
-  	return (output_stream << f.toFloat());
+  	return (o << rhs.toFloat());
 }
 
 bool Fixed::operator<(Fixed const& copy) const { return pFixe < copy.pFixe; }

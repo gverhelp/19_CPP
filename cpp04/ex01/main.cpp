@@ -1,31 +1,46 @@
-#include "AWeapon.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
-#include "Enemy.hpp"
-#include "SuperMutant.hpp"
-#include "RadScorpion.hpp"
-#include "Character.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
-    Character* me = new Character("me");
-    std::cout << *me;
-    Enemy* b = new RadScorpion();
-    AWeapon* pr = new PlasmaRifle();
-    AWeapon* pf = new PowerFist();
-    me->equip(pr);
-    std::cout << *me;
-    me->equip(pf);
-    me->attack(b);
-    std::cout << *me;
-    me->equip(pr);
-    std::cout << *me;
-    me->attack(b);
-    std::cout << *me;
-    me->attack(b);
-    std::cout << *me;
+    std::cout << "\n***** My main *****\n\n";
+    int size;
+    int compt;
 
-    //////////////////////////////////////////////////////
+    compt = 0;
+    std::cout << "How many Animals do you want?\n";
+    std::cin >> size;
+    
+    Animal *animal[size];
+    while (compt < size)
+    {
+        if (compt % 2)
+            animal[compt] = new Cat();
+        else
+            animal[compt] = new Dog();
+        compt++;
+    }
+    compt = 0;
+    while (compt < size)
+    {
+        std::cout << "----- Animal : " << compt << " -----\n";
+        std::cout << animal[compt]->getType() << std::endl;
+        animal[compt]->makeSound();
+        compt++;
+    }
+    compt = 0;
+    while (compt < size)
+    {
+        delete animal[compt];
+        compt++;
+    }
 
-    return 0;
+    std::cout << "\n***** Given main *****\n\n";
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+
+    delete j; //should not create a leak
+    delete i;
+
 }

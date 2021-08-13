@@ -64,7 +64,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
 
 void ClapTrap::setName(std::string newName)
 {
-    Name = newName.append(" ClapTrap");
+    Name = newName.append("_clap_name");
 }
 
 std::string ClapTrap::getName() const
