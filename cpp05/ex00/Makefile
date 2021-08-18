@@ -1,13 +1,11 @@
 CC = clang++
 
 SRCS = main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp
+		Bureaucrat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Animal
+NAME = Bureaucrat
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

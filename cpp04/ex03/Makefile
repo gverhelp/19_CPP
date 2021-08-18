@@ -1,13 +1,15 @@
 CC = clang++
 
 SRCS = main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Animal
+NAME = launch
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

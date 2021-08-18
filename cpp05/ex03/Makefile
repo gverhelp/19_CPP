@@ -1,13 +1,16 @@
 CC = clang++
 
 SRCS = main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp
+		Bureaucrat.cpp \
+		Form.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
+		Intern.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Animal
+NAME = Bureaucrat
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -20,6 +23,7 @@ clean :
 	rm -rf ${OBJS}
 
 fclean : clean
+	rm -rf *_shrubbery
 	rm -rf ${NAME}
 
 re : fclean all

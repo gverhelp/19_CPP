@@ -37,11 +37,6 @@ std::string const Animal::getType() const
     return (_Type);
 }
 
-void Animal::makeSound() const
-{
-    std::cout << "The Animal class doesn't make sound.\n";
-}
-
 std::ostream & operator<<(std::ostream & o, Animal const & rhs)
 {
     std::cout << rhs.getType() << std::endl;

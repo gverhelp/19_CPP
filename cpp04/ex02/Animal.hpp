@@ -13,7 +13,7 @@ class Animal
         virtual ~Animal();
 
         std::string const getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 
     protected :
         std::string _Type;

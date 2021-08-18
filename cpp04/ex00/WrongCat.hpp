@@ -13,7 +13,7 @@ class WrongCat : public WrongAnimal
         virtual ~WrongCat();
 
         std::string const getType() const;
-        void makeSound() const;
+        virtual void makeSound() const;
 
     protected :
         std::string _Type;
