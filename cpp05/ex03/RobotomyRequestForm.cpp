@@ -16,7 +16,6 @@ _target(target)
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy):
 Form(copy),
-_name(copy._name),
 _target(copy._target)
 {
 
@@ -27,7 +26,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &c
     if (this != &copy)
     {
         Form::operator=(copy);
-        _name = copy._name;
         _target = copy._target;
     }
     return (*this);
@@ -36,11 +34,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &c
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 
-}
-
-std::string RobotomyRequestForm::getName() const
-{
-    return (_name);
 }
 
 std::string RobotomyRequestForm::getTarget() const

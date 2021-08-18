@@ -16,7 +16,6 @@ _target(target)
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy):
 Form(copy),
-_name(copy._name),
 _target(copy._target)
 {
 
@@ -27,7 +26,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     if (this != &copy)
     {
         Form::operator=(copy);
-        _name = copy._name;
         _target = copy._target;
     }
     return (*this);
@@ -36,11 +34,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 
-}
-
-std::string ShrubberyCreationForm::getName() const
-{
-    return (_name);
 }
 
 std::string ShrubberyCreationForm::getTarget() const

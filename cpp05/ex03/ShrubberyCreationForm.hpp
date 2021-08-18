@@ -14,7 +14,6 @@ class ShrubberyCreationForm: public Form
         ShrubberyCreationForm& operator=(ShrubberyCreationForm const &copy);
         virtual ~ShrubberyCreationForm();
 
-        std::string getName() const;
         std::string getTarget() const;
         void        execute(Bureaucrat const &executor) const;
 
@@ -25,7 +24,6 @@ class ShrubberyCreationForm: public Form
         };
 
     private:
-        std::string _name;
         std::string _target;
 };
 

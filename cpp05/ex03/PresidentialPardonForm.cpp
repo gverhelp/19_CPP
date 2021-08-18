@@ -16,7 +16,6 @@ _target(target)
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy):
 Form(copy),
-_name(copy._name),
 _target(copy._target)
 {
 
@@ -27,7 +26,6 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
     if (this != &copy)
     {
         Form::operator=(copy);
-        _name = copy._name;
         _target = copy._target;
     }
     return (*this);
@@ -36,11 +34,6 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 PresidentialPardonForm::~PresidentialPardonForm()
 {
 
-}
-
-std::string PresidentialPardonForm::getName() const
-{
-    return (_name);
 }
 
 std::string PresidentialPardonForm::getTarget() const
