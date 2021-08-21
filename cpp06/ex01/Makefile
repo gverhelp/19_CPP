@@ -1,13 +1,12 @@
 CC = clang++
 
 SRCS = main.cpp \
-		Convert.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = convert
+NAME = Serialization
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 all : ${NAME}
 
