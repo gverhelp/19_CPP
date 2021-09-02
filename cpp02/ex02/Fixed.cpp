@@ -1,6 +1,7 @@
 # include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed():
+pFixe(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -62,7 +63,8 @@ float Fixed::toFloat(void) const
 
 std::ostream &operator<<(std::ostream &o, const Fixed &rhs)
 {
-  	return (o << rhs.toFloat());
+	o << rhs.toFloat();
+  	return (o);
 }
 
 bool Fixed::operator<(Fixed const& copy) const { return pFixe < copy.pFixe; }
