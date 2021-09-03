@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <typeinfo>
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
@@ -22,13 +23,11 @@ Base* generate(void)
 
 void identify(Base* p)
 {
-    std::cout << "identify function with ptr: ";
+    std::cout << "Identify function with ptr: ";
     if (dynamic_cast<A*>(p))
         std::cout << "Class A" << std::endl;
     else if (dynamic_cast<B*>(p))
-    {
         std::cout << "Class B" << std::endl;
-    }
     else if (dynamic_cast<C*>(p))
         std::cout << "Class C" << std::endl;
     else
@@ -37,16 +36,16 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-    std::cout << "identify function with reference: ";
+    std::cout << "Identify function with reference: " << std::endl;
     try
     {
         A& a = dynamic_cast<A&>(p);
         (void)a;
         std::cout << "Class A" << std::endl;
     }
-    catch (std::exception &e)
+    catch (std::bad_cast &e)
     {
-        (void)e;
+        std::cout << "Error Class A : " << e.what() << std::endl;
     }
     try
     {
@@ -54,9 +53,9 @@ void identify(Base& p)
         (void)b;
         std::cout << "Class B" << std::endl;
     }
-    catch (std::exception &e)
+    catch (std::bad_cast &e)
     {
-        (void)e;
+        std::cout << "Error Class B : " << e.what() << std::endl;
     }
     try
     {
@@ -64,9 +63,9 @@ void identify(Base& p)
         (void)c;
         std::cout << "Class C" << std::endl;
     }
-    catch (std::exception &e)
+    catch (std::bad_cast &e)
     {
-        (void)e;
+        std::cout << "Error Class C : " << e.what() << std::endl;
     }
 }
 
