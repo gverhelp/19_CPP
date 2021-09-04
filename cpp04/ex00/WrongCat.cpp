@@ -4,7 +4,6 @@ WrongCat::WrongCat() :
 WrongAnimal("Wrong Cat")
 {
     std::cout << "Default WrongCat constructor has been called.\n";
-    _Type = "";
 }
 
 WrongCat::WrongCat(WrongCat const &copy) :
@@ -26,11 +25,6 @@ WrongCat& WrongCat::operator=(const WrongCat &copy)
 WrongCat::~WrongCat()
 {
     std::cout << "Destructor WrongCat has been called.\n";
-}
-
-std::string const WrongCat::getType() const
-{
-    return (_Type);
 }
 
 void WrongCat::makeSound() const

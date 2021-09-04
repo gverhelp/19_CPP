@@ -12,11 +12,7 @@ class WrongCat : public WrongAnimal
         WrongCat& operator=(const WrongCat &copy);
         virtual ~WrongCat();
 
-        std::string const getType() const;
-        virtual void makeSound() const;
-
-    protected :
-        std::string _Type;
+        /*virtual*/ void makeSound() const;
 };
 
 #endif

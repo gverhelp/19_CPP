@@ -1,14 +1,15 @@
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
+Cure::Cure(): 
+AMateria("cure")
 {
-    std::cout << "Default Cure constructor has been called.\n";
+    std::cout << "Default Cure constructor has been called." << std::endl;
 }
 
-Cure::Cure(Cure const &copy) :
+Cure::Cure(Cure const &copy):
 AMateria(copy)
 {
-    std::cout << "Copy Cure constructor has been called.\n";
+    std::cout << "Copy Cure constructor has been called." << std::endl;
     *this = copy;
 }
 
@@ -23,7 +24,7 @@ Cure& Cure::operator=(const Cure &copy)
 
 Cure::~Cure()
 {
-    std::cout << "Destructor Cure has been called.\n";
+    std::cout << "Destructor Cure has been called." << std::endl;
 }
 
 AMateria* Cure::clone () const
@@ -33,5 +34,5 @@ AMateria* Cure::clone () const
 
 void Cure::use(ICharacter& target)
 {
-    std::cout << "*heals " << target.getName() << "'s wounds*\n";
+    std::cout << "*heals " << target.getName() << "'s wounds*" << std::endl;
 }

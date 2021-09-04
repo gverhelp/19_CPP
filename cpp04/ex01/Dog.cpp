@@ -16,7 +16,7 @@ Animal(copy)
 
 Dog& Dog::operator=(const Dog &copy)
 {
-    std::cout << "Overloaded Dog operator has been called.\n";
+    std::cout << "Assignation Dog operator has been called.\n";
     if (this != &copy)
     {
         delete this->_DogBrain;

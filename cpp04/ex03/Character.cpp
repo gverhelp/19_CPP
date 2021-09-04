@@ -1,18 +1,34 @@
 #include "Character.hpp"
 
-Character::Character() : _Name("Garreth"), _comptInv(0)
+Character::Character():
+_Name("Garreth"),
+_comptInv(0)
 {
-    std::cout << "Default Character constructor has been called.\n";
+    std::cout << "Default Character constructor has been called." << std::endl;
+    int a = 0;
+    while (a < 4)
+    {
+        _Inventory[a] = 0;
+        a++;
+    }
 }
 
-Character::Character(std::string Name) : _Name(Name), _comptInv(0)
+Character::Character(std::string Name):
+_Name(Name),
+_comptInv(0)
 {
-    std::cout << "Overloaded Character constructor has been called.\n";
+    std::cout << "Overloaded Character constructor has been called." << std::endl;
+    int a = 0;
+    while (a < 4)
+    {
+        _Inventory[a] = 0;
+        a++;
+    }
 }
 
 Character::Character(Character const &copy)
 {
-    std::cout << "Copy Character constructor has been called.\n";
+    std::cout << "Copy Character constructor has been called." << std::endl;
     *this = copy;
 }
 
@@ -40,7 +56,7 @@ Character& Character::operator=(const Character &copy)
 
 Character::~Character()
 {
-    std::cout << "Destructor Character has been called.\n";
+    std::cout << "Destructor Character has been called." << std::endl;
     for (int a = 0; a < _comptInv; a++)
         delete _Inventory[a];
 }

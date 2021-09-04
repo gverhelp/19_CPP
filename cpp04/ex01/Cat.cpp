@@ -16,7 +16,7 @@ Animal(copy)
 
 Cat& Cat::operator=(const Cat &copy)
 {
-    std::cout << "Overloaded Cat operator has been called.\n";
+    std::cout << "Assignation Cat operator has been called.\n";
     if (this != &copy)
     {
         delete this->_CatBrain;
