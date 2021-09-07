@@ -7,14 +7,14 @@
 
 int main()
 {
-	std::cout << "\n----- Create Robotomy Form test -----\n";
+	std::cout << "\n----- Create Shrubbery Form test -----\n";
 	try
 	{
 		Bureaucrat b("Garreth", 1);
 		Intern i;
 		Form* f;
 
-		f = i.makeForm("Robotomy request", "Monkey");
+		f = i.makeForm("Shrubbery request", "Monkey");
 		std::cout << b;
 		std::cout << *f;
 		b.signForm(*f);

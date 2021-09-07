@@ -27,8 +27,8 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &c
     if (this != &copy)
     {
         Form::operator=(copy);
-        _name = copy._name;
-        _target = copy._target;
+        _name = copy.getName();
+        _target = copy.getTarget();
     }
     return (*this);
 }

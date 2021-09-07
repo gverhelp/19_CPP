@@ -26,7 +26,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     if (this != &copy)
     {
         Form::operator=(copy);
-        _target = copy._target;
+        _target = copy.getTarget();
     }
     return (*this);
 }
@@ -83,6 +83,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     ofs << "        ###" << std::endl;
     ofs << "        ### mh" << std::endl << std::endl;
     ofs.close();
+    std::cout << "Done! Look at your files!" << std::endl;
 }
 
 const char* ShrubberyCreationForm::ErrorFileException::what() const throw()

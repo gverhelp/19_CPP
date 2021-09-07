@@ -26,7 +26,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
     if (this != &copy)
     {
         Form::operator=(copy);
-        _target = copy._target;
+        _target = copy.getTarget();
     }
     return (*this);
 }

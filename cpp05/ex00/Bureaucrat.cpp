@@ -28,7 +28,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 {
     if (this != &copy)
     {
-       _Grade = copy._Grade;
+       _Grade = copy.getGrade();
     }
     return (*this);
 }
@@ -76,6 +76,6 @@ void Bureaucrat::decrement()
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs)
 {
-    o << "<" << rhs.getName() << "> bureaucrat grade <" << rhs.getGrade() << ">\n";
+    o << "<" << rhs.getName() << "> bureaucrat grade <" << rhs.getGrade() << ">" << std::endl;
     return (o);
 }

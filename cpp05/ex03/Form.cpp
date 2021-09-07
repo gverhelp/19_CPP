@@ -31,7 +31,7 @@ Form& Form::operator=(const Form &copy)
 {
     if (this != &copy)
     {
-        _isSigned = copy._isSigned;
+        _isSigned = copy.getIsSigned();
     }
     return (*this);
 }

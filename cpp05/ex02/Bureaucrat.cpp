@@ -28,7 +28,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 {
     if (this != &copy)
     {
-       _Grade = copy._Grade;
+       _Grade = copy.getGrade();
     }
     return (*this);
 }
