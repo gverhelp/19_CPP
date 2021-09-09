@@ -4,7 +4,7 @@ SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = whatever
+NAME = Array
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
