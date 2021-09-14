@@ -20,7 +20,7 @@ T min(T const& a, T const& b)
 }
 
 template< typename T>
-T max(T const a, T const& b)
+T max(T const& a, T const& b)
 {
     return ((a >= b) ? a : b);
 }
