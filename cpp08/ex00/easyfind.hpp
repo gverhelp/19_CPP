@@ -9,13 +9,13 @@
 class NotFoundException : public std::exception
 {
     public :
-        const char *what() const throw();
+        virtual const char *what() const throw();
 };
 
 class ContainerIsEmptyException : public std::exception
 {
     public :
-        const char *what() const throw();
+        virtual const char *what() const throw();
 };
 
 const char* NotFoundException::what() const throw()
