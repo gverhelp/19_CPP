@@ -34,9 +34,9 @@ int easyfind(T& container, int toFind)
     typename T::const_iterator it = container.begin();
     typename T::const_iterator ite = container.end();
     
-    it = std::find(it, ite, toFind);
     if (container.empty())
         throw ContainerIsEmptyException();
+    it = std::find(it, ite, toFind);
     if (it == ite)
         throw NotFoundException();
     return (*it);

@@ -3,6 +3,8 @@
 
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <exception>
 
 class Span
 {
@@ -18,22 +20,24 @@ class Span
         void addNumber(iterator begin, iterator end);
         unsigned int shortestSpan();
         unsigned int longestSpan();
+        iterator begin();
+        iterator end();
 
-        class TooManyException: public std::exception
+        class TooManyNumbersException: public std::exception
         {
             public :
                 virtual const char* what() const throw()
                 {
-                    return ("Too many.");
+                    return ("Too many numbers.");
                 }
         };
 
-        class NotEnoughException: public std::exception
+        class NotEnoughNumberException: public std::exception
         {
             public :
                 virtual const char* what() const throw()
                 {
-                    return ("Not enough.");
+                    return ("Not enough number.");
                 }
         };
 
@@ -50,5 +54,6 @@ class Span
         std::vector<int> v;
         unsigned int     maxStore;
 };
+
 
 #endif
